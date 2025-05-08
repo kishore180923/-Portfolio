@@ -1,23 +1,40 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 
+// Importing icons from assets/icons folder
+import reactIcon from '../assets/react.png';
+import jsIcon from '../assets/js.webp';
+import cssIcon from '../assets/css.png';
+import gitIcon from '../assets/git.png';
+import htmlIcon from '../assets/html.png';
+import nodeJsIcon from '../assets/node-js.png';
+// import tsIcon from '../assets/typescript.png';
+// import tailwindIcon from '../assets/tailwind.png';
+// import reduxIcon from '../assets/redux.png';
+// import graphqlIcon from '../assets/graphql.png';
+// import mongoDbIcon from '../assets/mongodb.png';
+
 const skills = [
-  { name: 'React', image: '/icons/react.png', style: 'top-0 left-1/2', color: 'bg-blue-100', size: 'w-14 h-14' },
-  { name: 'JavaScript', image: '/icons/js.webp', style: 'top-16 left-10', color: 'bg-yellow-100', size: 'w-14 h-14' },
-  { name: 'CSS3', image: '/icons/css.png', style: 'bottom-20 left-16', color: 'bg-blue-50', size: 'w-14 h-14' },
-  { name: 'Git', image: '/icons/git.png', style: 'bottom-20 right-12', color: 'bg-orange-50', size: 'w-14 h-14' },
-  { name: 'HTML5', image: '/icons/html.png', style: 'top-10 right-24', color: 'bg-orange-50', size: 'w-14 h-14' },
-  { name: 'Node.js', image: '/icons/node-js.png', style: 'top-28 left-1/3', color: 'bg-green-50', size: 'w-14 h-14' },
-  { name: 'TypeScript', image: '/icons/typescript.png', style: 'bottom-32 left-1/4', color: 'bg-blue-50', size: 'w-12 h-12' },
-  { name: 'Tailwind', image: '/icons/tailwind.png', style: 'bottom-10 left-1/2', color: 'bg-teal-50', size: 'w-16 h-16' },
-  { name: 'Redux', image: '/icons/redux.png', style: 'top-40 left-20', color: 'bg-purple-50', size: 'w-12 h-12' },
-  { name: 'GraphQL', image: '/icons/graphql.png', style: 'bottom-36 right-24', color: 'bg-pink-50', size: 'w-14 h-14' },
-  { name: 'MongoDB', image: '/icons/mongodb.png', style: 'top-24 right-32', color: 'bg-green-50', size: 'w-12 h-12' },
+  { name: 'React', image: reactIcon, style: 'top-0 left-1/2', color: 'bg-blue-100', size: 'w-14 h-14' },
+  { name: 'JavaScript', image: jsIcon, style: 'top-16 left-10', color: 'bg-yellow-100', size: 'w-14 h-14' },
+  { name: 'Tailwind CSS', image: cssIcon, style: 'bottom-20 left-16', color: 'bg-blue-50', size: 'w-14 h-14' },
+  { name: 'Git', image: gitIcon, style: 'bottom-20 right-12', color: 'bg-orange-50', size: 'w-14 h-14' },
+  { name: 'HTML5', image: htmlIcon, style: 'top-10 right-24', color: 'bg-orange-50', size: 'w-14 h-14' },
+  { name: 'Node.js', image: nodeJsIcon, style: 'top-28 left-1/3', color: 'bg-green-50', size: 'w-14 h-14' },
+  // { name: 'TypeScript', image: tsIcon, style: 'bottom-32 left-1/4', color: 'bg-blue-50', size: 'w-12 h-12' },
+  // { name: 'Tailwind', image: tailwindIcon, style: 'bottom-10 left-1/2', color: 'bg-teal-50', size: 'w-16 h-16' },
+  // { name: 'Redux', image: reduxIcon, style: 'top-40 left-20', color: 'bg-purple-50', size: 'w-12 h-12' },
+  // { name: 'GraphQL', image: graphqlIcon, style: 'bottom-36 right-24', color: 'bg-pink-50', size: 'w-14 h-14' },
+  // { name: 'MongoDB', image: mongoDbIcon, style: 'top-24 right-32', color: 'bg-green-50', size: 'w-12 h-12' },
 ];
+
+// Your component rendering logic goes below
 
 const SkillSection = () => {
   return (
-    <section className="relative py-20 overflow-hidden bg-white">
+    <section  id="skills" className=
+   
+    "relative py-20 overflow-hidden bg-white">
       <div className="container mx-auto flex flex-col md:flex-row items-center px-4 md:px-10 gap-10">
         {/* Left Content */}
         <div className="md:w-1/2 text-center md:text-left space-y-6 z-10">
@@ -131,6 +148,11 @@ const SkillSection = () => {
               />
             </motion.div>
           ))}
+          
+         
+        
+          
+         
         </div>
 
         {/* Background elements */}

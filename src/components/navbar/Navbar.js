@@ -31,14 +31,17 @@ const Navbar = () => {
     setActiveLink('Home');
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
-
   const navItems = [
     { name: 'Home', href: '#home' },
     { name: 'About', href: '#about' },
-    { name: 'Projects', href: '#projects' },
     { name: 'Skills', href: '#skills' },
+    { name: 'Projects', href: '#projects' },
+    { name: 'Experience', href: '#experience' },
+    { name: 'Blog', href: '#blog' },
     { name: 'Contact', href: '#contact' },
   ];
+  
+  
 
   return (
     <header
@@ -57,12 +60,17 @@ const Navbar = () => {
             onClick={handleLogoClick}
           >
             <span className="relative">
-              <span className="text-2xl font-extrabold tracking-tight text-gray-900 dark:text-white 
-                font-['Poppins'] italic bg-gradient-to-r from-blue-500 to-purple-500 bg-clip-text 
-                text-transparent transition-all duration-300 group-hover:brightness-125">
-                Kishore
-              </span>
-              <span className={`absolute left-0 bottom-0 h-0.5 w-full bg-gradient-to-r from-blue-500 to-purple-500 
+            <span className="text-3xl font-semibold tracking-tight 
+  bg-gradient-to-r from-white to-blue-500 
+  bg-clip-text text-transparent 
+  transition-all duration-500 ease-in-out 
+  hover:from-blue-400 hover:to-white 
+  font-sans">
+  Kishore
+</span>
+
+
+              <span className={`absolute left-0 bottom-0 h-0.5 w-full 
                 transition-all duration-300 ${activeLink === 'Home' ? 'opacity-100' : 'opacity-0 group-hover:opacity-100 w-0 group-hover:w-full'}`}
               />
             </span>
@@ -145,8 +153,7 @@ const Navbar = () => {
         {/* Mobile Navigation */}
         <div 
           className={`md:hidden overflow-hidden transition-all duration-500 ease-in-out
-            ${isOpen ? 'max-h-96 opacity-100 mt-4' : 'max-h-0 opacity-0'}`}
-        >
+            ${isOpen ? 'max-h-96 opacity-100 mt-4' : 'max-h-0 opacity-0'}`} >
           <div className="py-2 space-y-2">
             {navItems.map((item) => (
               <a
@@ -199,4 +206,4 @@ const Navbar = () => {
   );
 };
 
-export default Navbar;
+export default Navbar;                 

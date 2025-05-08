@@ -12,16 +12,17 @@ import BlogSection from './components/blogSection/BlogSection';
 function App() {
   return (
     <div className="scroll-smooth">
-      <Navbar />
-      <Home />
-      <About />
-      <SkillsPage />
-      <ProjectSection />
-      <ExperienceAndCertifications />
-      <BlogSection />
-      <Contact />
-      <Footer />
-    </div>
+    <Navbar />
+    <Home />
+    <About />
+    <SkillsPage />
+    <ProjectSection /> 
+   <ExperienceAndCertifications />
+    <BlogSection />
+    <Contact />
+    <Footer />
+  </div>
+  
   );
 }
 

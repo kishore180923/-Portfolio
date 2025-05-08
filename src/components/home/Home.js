@@ -4,15 +4,27 @@ import { useInView } from 'react-intersection-observer';
 import Particles from 'react-tsparticles';
 import { loadFull } from 'tsparticles';
 
+// Importing images from the assets folder
+import reactIcon from '../assets/react.png';
+import jsIcon from '../assets/js.webp';
+import htmlIcon from '../assets/html.png';
+import cssIcon from '../assets/css.png';
+import gitIcon from '../assets/git.png';
+import vsCodeIcon from '../assets/vs-code.png';
+import nodeJsIcon from '../assets/node-js.png';
+
 const techIcons = [
-  { src: '/icons/react.png', style: 'top-4 left-8', name: 'React' },
-  { src: '/icons/js.webp', style: 'top-16 right-10', name: 'JavaScript' },
-  { src: '/icons/html.png', style: 'bottom-6 left-8', name: 'HTML' },
-  { src: '/icons/css.png', style: 'bottom-20 right-6', name: 'CSS' },
-  { src: '/icons/git.png', style: 'top-28 left-1/2', name: 'Git' },
-  { src: '/icons/vs-code.png', style: 'top-1/2 right-8', name: 'VS Code' },
-  { src: '/icons/node-js.png', style: 'bottom-8 right-1/4', name: 'Node.js' },
+  { src: reactIcon, style: 'top-4 left-8', name: 'React' },
+  { src: jsIcon, style: 'top-16 right-10', name: 'JavaScript' },
+  { src: htmlIcon, style: 'bottom-6 left-8', name: 'HTML' },
+  { src: cssIcon, style: 'bottom-20 right-6', name: 'Tailwind CSS' },
+  { src: gitIcon, style: 'top-28 left-1/2', name: 'Git' },
+  { src: vsCodeIcon, style: 'top-1/2 right-8', name: 'VS Code' },
+  { src: nodeJsIcon, style: 'bottom-8 right-1/4', name: 'Node.js' },
 ];
+
+// Continue with the rest of your component logic...
+
 
 const Home = () => {
   const controls = useAnimation();
@@ -67,24 +79,7 @@ const Home = () => {
     await loadFull(main);
   };
 
-  const containerVariants = {
-    hidden: { opacity: 0 },
-    visibleDown: {
-      opacity: 1,
-      transition: {
-        staggerChildren: 0.2,
-        when: 'beforeChildren',
-      },
-    },
-    visibleUp: {
-      opacity: 1,
-      transition: {
-        staggerChildren: 0.1,
-        staggerDirection: -1,
-        when: 'beforeChildren',
-      },
-    }
-  };
+  
 
   const itemVariants = {
     hidden: { y: 20, opacity: 0 },
@@ -138,27 +133,7 @@ const Home = () => {
     },
   };
 
-  const imageVariants = {
-    hidden: { scale: 0.8, opacity: 0, rotate: -5 },
-    visibleDown: {
-      scale: 1,
-      opacity: 1,
-      rotate: 0,
-      transition: {
-        duration: 0.8,
-        ease: [0.6, 0.05, 0.01, 0.9], // Updated easing
-      },
-    },
-    visibleUp: {
-      scale: 1,
-      opacity: 1,
-      rotate: [0, 3, -3, 0],
-      transition: {
-        duration: 0.6,
-        ease: 'easeOut',
-      },
-    },
-  };
+
 
   const buttonVariants = {
     hidden: { y: 20, opacity: 0 },
@@ -311,7 +286,7 @@ const Home = () => {
           className="flex-1 text-center md:text-left space-y-6"
           initial="hidden"
           animate={controls}
-          variants={containerVariants}
+          
         >
           <motion.h2
             className="text-2xl md:text-3xl font-semibold text-gray-600 tracking-wide"
@@ -409,8 +384,7 @@ const Home = () => {
 
           {/* Tech Stack Badges */}
           <motion.div
-            className="mt-12 flex flex-wrap gap-3 justify-center md:justify-start"
-          >
+            className="mt-12 flex flex-wrap gap-3 justify-center md:justify-start" >
             {['React', 'JavaScript', 'HTML5', 'CSS3'].map((tech, i) => (
               <motion.span
                 key={tech}
@@ -427,7 +401,7 @@ const Home = () => {
                 }}
               >
                 <img
-                  src={`/icons/${tech.toLowerCase().replace('5', '').replace('3', '')}.png`}
+                  src={`/${tech.toLowerCase().replace('5', '').replace('3', '')}.png`}
                   className="w-4 h-4 mr-1"
                   alt={tech}
                 />
@@ -441,8 +415,7 @@ const Home = () => {
         <motion.div
           className="flex-1 flex justify-center relative"
           initial="hidden"
-          animate={controls}
-        >
+          animate={controls}>
           <div className="relative">
             <motion.div
               className="absolute inset-0 bg-gradient-to-r from-indigo-400 to-purple-400 rounded-full opacity-20 blur-3xl w-80 h-80 md:w-96 md:h-96 transform -translate-x-1/4 translate-y-1/4"
@@ -464,7 +437,7 @@ const Home = () => {
               src="/my_-removebg-preview.png"
               alt="Kishore Profile"
               className="w-80 md:w-[28rem] object-cover relative z-10 drop-shadow-xl hover:drop-shadow-2xl transition-all duration-300"
-              variants={imageVariants}
+             
               whileHover={{ 
                 scale: 1.02,
                 rotate: [0, 2, -2, 0],

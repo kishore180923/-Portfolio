@@ -3,7 +3,7 @@ import { motion } from 'framer-motion';
 
 const ExperienceAndCertifications = () => {
   return (
-    <div className="w-full px-4 py-20 bg-gradient-to-br from-gray-50 to-gray-100 text-gray-800">
+    <div id ="experience" className="w-full px-4 py-20 bg-gradient-to-br from-gray-50 to-gray-100 text-gray-800">
       <div className="max-w-7xl mx-auto space-y-24">
         {/* Section Header */}
         <motion.div

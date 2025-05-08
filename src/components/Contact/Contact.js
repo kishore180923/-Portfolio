@@ -29,7 +29,7 @@ const Newsletter = () => {
   };
 
   return (
-    <div className="relative overflow-hidden py-10 sm:py-16 bg-white">
+    <div id ="contact" className="relative overflow-hidden py-10 sm:py-16 bg-white">
       {/* Floating Symbols Container (absolutely positioned) */}
       <div className="pointer-events-none absolute inset-0">
         {/* Symbol 1 */}
