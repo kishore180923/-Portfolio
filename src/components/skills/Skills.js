@@ -131,11 +131,6 @@ const SkillSection = () => {
               />
             </motion.div>
           ))}
-          
-         
-        
-          
-         
         </div>
 
         {/* Background elements */}
