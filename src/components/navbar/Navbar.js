@@ -8,7 +8,7 @@ const Navbar = () => {
   useEffect(() => {
     const handleScroll = () => {
       setScrolled(window.scrollY > 10);
-      
+
       // Update active link based on scroll position
       const sections = ['home', 'about', 'projects', 'skills', 'contact'];
       for (const section of sections) {
@@ -22,7 +22,7 @@ const Navbar = () => {
         }
       }
     };
-    
+
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
@@ -40,8 +40,8 @@ const Navbar = () => {
     { name: 'Blog', href: '#blog' },
     { name: 'Contact', href: '#contact' },
   ];
-  
-  
+
+
 
   return (
     <header
@@ -60,14 +60,14 @@ const Navbar = () => {
             onClick={handleLogoClick}
           >
             <span className="relative">
-            <span className="text-3xl font-semibold tracking-tight 
+              <span className="text-3xl font-semibold tracking-tight 
   bg-gradient-to-r from-white to-blue-500 
   bg-clip-text text-transparent 
   transition-all duration-500 ease-in-out 
   hover:from-blue-400 hover:to-white 
   font-sans">
-  Kishore
-</span>
+                Kishore
+              </span>
 
 
               <span className={`absolute left-0 bottom-0 h-0.5 w-full 
@@ -91,17 +91,17 @@ const Navbar = () => {
               >
                 <span className="relative z-10">{item.name}</span>
                 {activeLink === item.name ? (
-                  <span 
+                  <span
                     className="absolute left-1/2 bottom-0 h-0.5 w-8 -translate-x-1/2 bg-gradient-to-r from-blue-500 to-purple-500 
                     rounded-full transition-all duration-300"
                   />
                 ) : (
-                  <span 
+                  <span
                     className="absolute left-0 bottom-0 h-0.5 w-0 bg-gradient-to-r from-blue-500 to-purple-500 
                     rounded-full transition-all duration-300 group-hover:w-full"
                   />
                 )}
-                <span 
+                <span
                   className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-10 h-10 rounded-full 
                   bg-blue-500/10 dark:bg-purple-500/10 opacity-0 scale-0 group-hover:opacity-100 group-hover:scale-100 
                   transition-all duration-300"
@@ -117,11 +117,11 @@ const Navbar = () => {
               overflow-hidden group"
             >
               <span className="relative z-10">Let's Talk</span>
-              <span 
+              <span
                 className="absolute inset-0 bg-gradient-to-r from-purple-500 to-blue-500 opacity-0 
                 group-hover:opacity-100 transition-opacity duration-300"
               />
-              <span 
+              <span
                 className="absolute top-0 -inset-full h-full w-1/2 z-5 block transform -skew-x-12 
                 bg-gradient-to-r from-transparent to-white/50 opacity-40 group-hover:animate-shine 
                 transition-all duration-500"
@@ -151,7 +151,7 @@ const Navbar = () => {
         </div>
 
         {/* Mobile Navigation */}
-        <div 
+        <div
           className={`md:hidden overflow-hidden transition-all duration-500 ease-in-out
             ${isOpen ? 'max-h-96 opacity-100 mt-4' : 'max-h-0 opacity-0'}`} >
           <div className="py-2 space-y-2">
@@ -171,16 +171,16 @@ const Navbar = () => {
                   }`}
               >
                 <span className="relative z-10 flex items-center">
-                  <span 
+                  <span
                     className={`w-2 h-2 rounded-full mr-3 transition-all duration-300
-                      ${activeLink === item.name 
-                        ? 'bg-gradient-to-r from-blue-500 to-purple-500 scale-125' 
+                      ${activeLink === item.name
+                        ? 'bg-gradient-to-r from-blue-500 to-purple-500 scale-125'
                         : 'bg-gray-400 dark:bg-gray-600 group-hover:bg-blue-500 scale-90'
                       }`}
                   />
                   {item.name}
                 </span>
-                <span 
+                <span
                   className="absolute left-0 bottom-0 h-0.5 w-0 bg-gradient-to-r from-blue-500 to-purple-500 
                   transition-all duration-300 group-hover:w-full"
                 />
@@ -194,7 +194,7 @@ const Navbar = () => {
               hover:shadow-blue-500/30 relative overflow-hidden group"
             >
               <span className="relative z-10">Let's Talk</span>
-              <span 
+              <span
                 className="absolute inset-0 bg-gradient-to-r from-purple-500 to-blue-500 opacity-0 
                 group-hover:opacity-100 transition-opacity duration-300"
               />
@@ -206,4 +206,4 @@ const Navbar = () => {
   );
 };
 
-export default Navbar;                 
+export default Navbar;

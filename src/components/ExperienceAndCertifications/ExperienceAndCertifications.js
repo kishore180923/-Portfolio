@@ -1,9 +1,10 @@
 import React from 'react';
 import { motion } from 'framer-motion';
+import Experience from '../assets/Programming.png';
 
 const ExperienceAndCertifications = () => {
   return (
-    <div id ="experience" className="w-full px-4 py-20 bg-gradient-to-br from-gray-50 to-gray-100 text-gray-800">
+    <section id="experience" className="w-full px-4 py-20 bg-gradient-to-br from-gray-50 to-gray-100 text-gray-800">
       <div className="max-w-7xl mx-auto space-y-24">
         {/* Section Header */}
         <motion.div
@@ -31,19 +32,20 @@ const ExperienceAndCertifications = () => {
           className="relative"
         >
           <div className="absolute -inset-4  opacity-0 group-hover:opacity-50 blur transition duration-300"></div>
-           <div className="relative flex flex-col lg:flex-row items-center gap-8 lg:gap-12 ">
+          <div className="relative flex flex-col lg:flex-row items-center gap-8 lg:gap-12 ">
             <div className="w-full lg:w-1/2 h-full">
               <img
-                src="/images/softye-logo.png"
+                src={Experience}
                 alt="Softye Technologies"
-                className="w-full h-full object-cover object-center"
+                className="w-90 h-90 object-cover object-center"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent opacity-0 hover:opacity-100 transition-opacity duration-300 flex items-end p-6">
+
+              <div className="absolute inset-0 flex items-end p-6">
                 <a
-                  href="https://softyetechnologies.com"
+                  href="https://softyetech.com/"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-white font-medium hover:underline"
+                  className="text-blue-600 font-medium hover:underline"
                 >
                   Visit Company Website →
                 </a>
@@ -54,8 +56,8 @@ const ExperienceAndCertifications = () => {
                 <div className="w-4 h-4 bg-gradient-to-r from-indigo-500 to-purple-500 rounded-full flex-shrink-0"></div>
                 <span className="text-sm font-semibold tracking-wider text-indigo-600 uppercase">Professional Experience</span>
               </div>
-              <h2 className="text-3xl font-bold mb-1 text-gray-900">Frontend Developer</h2>
-              <h4 className="text-xl font-semibold mb-6 text-gray-700">Intern at Softye Technologies</h4>
+              <h2 className="text-3xl font-bold mb-1 text-gray-900">Web Developer</h2>
+              <h4 className="text-xl font-semibold mb-6 text-gray-700"> At <span className="text-blue-600">Softye Technologies</span></h4>
 
               <div className="prose prose-indigo max-w-none text-gray-600 mb-8">
                 <p>
@@ -111,13 +113,12 @@ const ExperienceAndCertifications = () => {
         </motion.div>
 
         {/* Certifications Section */}
-        <motion.div
+        {/* <motion.div
           initial={{ opacity: 0, y: 60 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.1 }}
           viewport={{ once: true }}
-          className="relative"
-        >
+          className="relative">
           <div className="absolute -inset-4 bg-gradient-to-r from-emerald-100 to-cyan-100 rounded-2xl opacity-0 group-hover:opacity-50 blur transition duration-300"></div>
           <div className="relative flex flex-col lg:flex-row-reverse items-center gap-8 lg:gap-12 transition-all duration-300">
             <div className="w-full lg:w-1/2 h-full">
@@ -126,7 +127,7 @@ const ExperienceAndCertifications = () => {
                 alt="Advanced React Certification"
                 className="w-full h-full object-cover object-center"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent opacity-0 hover:opacity-100 transition-opacity duration-300 flex items-end p-6">
+              <div className="flex items-end p-6">
                 <a
                   href="#"
                   className="text-white font-medium hover:underline"
@@ -136,7 +137,7 @@ const ExperienceAndCertifications = () => {
                     alert('Certificate verification would open here');
                   }}
                 >
-               
+
                 </a>
               </div>
             </div>
@@ -201,9 +202,9 @@ const ExperienceAndCertifications = () => {
               </div>
             </div>
           </div>
-        </motion.div>
+        </motion.div> */}
       </div>
-    </div>
+    </section>
   );
 };
 

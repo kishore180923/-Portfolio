@@ -1,5 +1,8 @@
 import React from 'react';
 import { CodeBracketIcon, EyeIcon, ArrowTopRightOnSquareIcon } from '@heroicons/react/24/outline';
+import Ecommerce from '../assets/Ecommerce.jpeg';
+import ticktbooking from '../assets/ticket-booking.jpeg';
+import weather from '../assets/Weather Dashboard.png';
 
 const projects = [
   {
@@ -7,16 +10,16 @@ const projects = [
     title: "E-Commerce Platform",
     description: "A full-stack e-commerce solution with cart functionality, user authentication, and payment processing.",
     tech: ["React", "Node.js", "MongoDB", "Stripe"],
-    image: "/images/ecommerce-thumbnail.jpg",
+    image: Ecommerce,
     github: "https://github.com/yourusername/ecommerce-platform",
     live: "https://yourapp.com"
   },
   {
     id: 2,
-    title: "Task Management App",
-    description: "Productivity application for managing tasks with drag-and-drop interface and team collaboration features.",
+    title: "movie ticket booking",
+    description: "A movie ticket booking application with a user-friendly interface and real-time seat selection.",
     tech: ["React", "Firebase", "Tailwind CSS", "DnD"],
-    image: "/images/taskapp-thumbnail.jpg",
+    image: ticktbooking,
     github: "https://github.com/yourusername/task-manager",
     live: "https://tasks.yourapp.com"
   },
@@ -25,7 +28,7 @@ const projects = [
     title: "Weather Dashboard",
     description: "Real-time weather forecasting application with interactive maps and location-based services.",
     tech: ["React", "OpenWeather API", "Chart.js", "Geolocation"],
-    image: "/images/Weather Dashboard.png",
+    image: weather,
     github: "https://github.com/yourusername/weather-dashboard",
     live: "https://weather.yourapp.com"
   }

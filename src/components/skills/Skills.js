@@ -8,11 +8,9 @@ import cssIcon from '../assets/css.png';
 import gitIcon from '../assets/git.png';
 import htmlIcon from '../assets/html.png';
 import nodeJsIcon from '../assets/node-js.png';
-// import tsIcon from '../assets/typescript.png';
-// import tailwindIcon from '../assets/tailwind.png';
-// import reduxIcon from '../assets/redux.png';
-// import graphqlIcon from '../assets/graphql.png';
-// import mongoDbIcon from '../assets/mongodb.png';
+import css3Icon from '../assets/css3.png';
+import postmanIcon from '../assets/postman.webp';
+import mongoIcon from '../assets/mongo-db.png';
 
 const skills = [
   { name: 'React', image: reactIcon, style: 'top-0 left-1/2', color: 'bg-blue-100', size: 'w-14 h-14' },
@@ -21,11 +19,9 @@ const skills = [
   { name: 'Git', image: gitIcon, style: 'bottom-20 right-12', color: 'bg-orange-50', size: 'w-14 h-14' },
   { name: 'HTML5', image: htmlIcon, style: 'top-10 right-24', color: 'bg-orange-50', size: 'w-14 h-14' },
   { name: 'Node.js', image: nodeJsIcon, style: 'top-28 left-1/3', color: 'bg-green-50', size: 'w-14 h-14' },
-  // { name: 'TypeScript', image: tsIcon, style: 'bottom-32 left-1/4', color: 'bg-blue-50', size: 'w-12 h-12' },
-  // { name: 'Tailwind', image: tailwindIcon, style: 'bottom-10 left-1/2', color: 'bg-teal-50', size: 'w-16 h-16' },
-  // { name: 'Redux', image: reduxIcon, style: 'top-40 left-20', color: 'bg-purple-50', size: 'w-12 h-12' },
-  // { name: 'GraphQL', image: graphqlIcon, style: 'bottom-36 right-24', color: 'bg-pink-50', size: 'w-14 h-14' },
-  // { name: 'MongoDB', image: mongoDbIcon, style: 'top-24 right-32', color: 'bg-green-50', size: 'w-12 h-12' },
+  { name: 'CSS3', image: css3Icon, style: 'bottom-32 left-1/4', color: 'bg-blue-50', size: 'w-12 h-12' },
+  { name: 'Postman', image: postmanIcon, style: 'bottom-10 left-1/2', color: 'bg-teal-50', size: 'w-16 h-16' },
+{ name: 'MongoDB', image: mongoIcon, style: 'top-40 right-32', color: 'bg-green-50', size: 'w-16 h-16' },
 ];
 
 // Your component rendering logic goes below
@@ -61,13 +57,14 @@ const SkillSection = () => {
           </motion.h2>
           
           <motion.p 
-            className="text-gray-600 text-lg leading-relaxed"
-            initial={{ opacity: 0, x: -20 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.5, delay: 0.1 }}
-          >
-            With <span className="text-blue-600 font-medium">5+ years</span> of experience, I've mastered a diverse set of technologies to build <span className="text-purple-600 font-medium">scalable</span>, <span className="text-pink-600 font-medium">performant</span> web applications. I continuously expand my skillset to stay at the forefront of modern web development.
-          </motion.p>
+  className="text-gray-600 text-lg leading-relaxed"
+  initial={{ opacity: 0, x: -20 }}
+  whileInView={{ opacity: 1, x: 0 }}
+  transition={{ duration: 0.5, delay: 0.1 }}
+>
+  As a <span className="text-blue-600 font-medium">passionate fresher</span> with <span className="text-purple-600 font-medium">7 months</span> of hands-on experience, I’ve been building <span className="text-pink-600 font-medium">efficient</span> and <span className="text-purple-600 font-medium">user-friendly</span> web applications. I'm constantly learning and evolving to grow as a modern web developer.
+</motion.p>
+
           
           <motion.div
             className="flex flex-wrap gap-3 mt-6"

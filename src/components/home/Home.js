@@ -12,19 +12,30 @@ import cssIcon from '../assets/css.png';
 import gitIcon from '../assets/git.png';
 import vsCodeIcon from '../assets/vs-code.png';
 import nodeJsIcon from '../assets/node-js.png';
+import mongoIcon from '../assets/mongo-db.png';
+import postmanIcon from '../assets/postman.webp';
+import css3Icon from '../assets/css3.png';
+
 
 const techIcons = [
-  { src: reactIcon, style: 'top-4 left-8', name: 'React' },
-  { src: jsIcon, style: 'top-16 right-10', name: 'JavaScript' },
-  { src: htmlIcon, style: 'bottom-6 left-8', name: 'HTML' },
-  { src: cssIcon, style: 'bottom-20 right-6', name: 'Tailwind CSS' },
-  { src: gitIcon, style: 'top-28 left-1/2', name: 'Git' },
-  { src: vsCodeIcon, style: 'top-1/2 right-8', name: 'VS Code' },
-  { src: nodeJsIcon, style: 'bottom-8 right-1/4', name: 'Node.js' },
+{ src: reactIcon, style: 'top-4 left-8', name: 'React' },
+{ src: jsIcon, style: 'top-16 right-10', name: 'JavaScript' },
+{ src: htmlIcon, style: 'bottom-6 left-8', name: 'HTML' },
+{ src: cssIcon, style: 'bottom-20 right-6', name: 'Tailwind CSS' },
+{ src: gitIcon, style: 'top-28 left-1/2', name: 'Git' },
+{ src: nodeJsIcon, style: 'bottom-8 right-1/4', name: 'Node.js' },
+{ src: mongoIcon, style: 'top-6 right-1/3', name: 'MongoDB' },
+{ src: postmanIcon, style: 'bottom-10 left-1/3', name: 'Postman' },
+{ src: css3Icon, style: 'top-1/4 right-12', name: 'CSS3' },
 ];
 
-// Continue with the rest of your component logic...
-
+// Map tech names to their corresponding icons for badges
+const techBadgeIcons = {
+  React: reactIcon,
+  JavaScript: jsIcon,
+  HTML5: htmlIcon,
+  CSS3: cssIcon,
+};
 
 const Home = () => {
   const controls = useAnimation();
@@ -39,7 +50,7 @@ const Home = () => {
 
   const { scrollYProgress } = useScroll({
     target: containerRef,
-    offset: ['start start', 'end start']
+    offset: ['start start', 'end start'],
   });
 
   const yBg = useTransform(scrollYProgress, [0, 1], ['0%', '50%']);
@@ -79,8 +90,6 @@ const Home = () => {
     await loadFull(main);
   };
 
-  
-
   const itemVariants = {
     hidden: { y: 20, opacity: 0 },
     visibleDown: {
@@ -98,7 +107,7 @@ const Home = () => {
         duration: 0.3,
         ease: 'easeOut',
       },
-    }
+    },
   };
 
   const iconVariants = {
@@ -133,8 +142,6 @@ const Home = () => {
     },
   };
 
-
-
   const buttonVariants = {
     hidden: { y: 20, opacity: 0 },
     visibleDown: {
@@ -160,7 +167,7 @@ const Home = () => {
         duration: 0.5,
         ease: 'easeOut',
       },
-    }
+    },
   };
 
   const badgeVariants = {
@@ -190,7 +197,7 @@ const Home = () => {
   return (
     <section
       id="home"
-      className="min-h-screen bg-gradient-to-br from-white to-indigo-50 flex items-center justify-center p-8 relative overflow-hidden"
+      className="min-h-screen bg-gradient-to-br from-white to-indigo-50 flex items-center justify-center p-4 sm:p-6 md:p-8 relative overflow-hidden"
       ref={containerRef}
       onMouseMove={handleMouseMove}
     >
@@ -199,7 +206,7 @@ const Home = () => {
         className="absolute inset-0 z-0"
         style={{
           y: yBg,
-          x: xBg
+          x: xBg,
         }}
       >
         <Particles
@@ -280,39 +287,32 @@ const Home = () => {
         />
       </motion.div>
 
-      <div className="max-w-7xl w-full flex flex-col md:flex-row items-center gap-16 z-10" ref={ref}>
+      <div className="max-w-7xl w-full flex flex-col md:flex-row items-center gap-8 sm:gap-12 md:gap-16 z-10" ref={ref}>
         {/* Left Content Section */}
         <motion.div
-          className="flex-1 text-center md:text-left space-y-6"
+          className="flex-1 text-center md:text-left space-y-4 sm:space-y-6"
           initial="hidden"
           animate={controls}
-          
         >
-          <motion.h2
-            className="text-2xl md:text-3xl font-semibold text-gray-600 tracking-wide"
-            variants={itemVariants}
-          >
-            Hey There! 👋
-          </motion.h2>
           <motion.h1
-            className="text-5xl md:text-6xl font-extrabold mt-2 bg-gradient-to-r from-indigo-600 to-purple-600 bg-clip-text text-transparent"
+            className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold bg-gradient-to-r from-indigo-600 to-purple-600 bg-clip-text text-transparent"
             variants={itemVariants}
             whileHover={{
               backgroundPosition: '100%',
-              transition: { duration: 1.5, repeat: Infinity, repeatType: 'reverse' }
+              transition: { duration: 1.5, repeat: Infinity, repeatType: 'reverse' },
             }}
             style={{
               backgroundSize: '200% 100%',
-              backgroundPosition: '0%'
+              backgroundPosition: '0%',
             }}
           >
             I'm Kishore
           </motion.h1>
           <motion.h2
-            className="text-3xl md:text-4xl font-medium text-gray-800 mt-1"
+            className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-medium text-gray-800"
             variants={itemVariants}
           >
-            A{' '}
+            A{' passionate '}
             <motion.span 
               className="bg-gradient-to-r from-indigo-600 to-purple-600 bg-clip-text text-transparent"
               animate={{
@@ -321,36 +321,35 @@ const Home = () => {
               transition={{
                 duration: 4,
                 repeat: Infinity,
-                ease: 'linear'
+                ease: 'linear',
               }}
               style={{
-                backgroundSize: '200% 100%'
+                backgroundSize: '200% 100%',
               }}
             >
-              Frontend Developer
+              Web Developer.
             </motion.span>
           </motion.h2>
           <motion.p
-            className="mt-4 text-gray-600 text-lg md:text-xl max-w-2xl leading-relaxed"
+            className="text-sm sm:text-base md:text-lg lg:text-xl text-gray-600 max-w-2xl leading-relaxed mx-auto md:mx-0"
             variants={itemVariants}
           >
-            I craft beautiful, responsive web experiences with modern technologies.
-            Passionate about creating intuitive user interfaces that make an impact.
+            I craft beautiful, responsive web experiences using modern technologies, with a passion for designing intuitive user interfaces that make an impact.
           </motion.p>
           <motion.div
-            className="mt-8 flex flex-col sm:flex-row gap-5 justify-center md:justify-start"
+            className="mt-6 sm:mt-8 flex flex-col sm:flex-row gap-4 sm:gap-5 justify-center md:justify-start"
             variants={itemVariants}
           >
             <motion.a
               href="#contact"
-              className="bg-gradient-to-r from-indigo-600 to-purple-600 text-white px-8 py-3 rounded-full hover:from-indigo-700 hover:to-purple-700 transition-all duration-300 shadow-lg hover:shadow-xl flex items-center gap-2"
+              className="bg-gradient-to-r from-indigo-600 to-purple-600 text-white px-6 py-2.5 sm:px-8 sm:py-3 rounded-full hover:from-indigo-700 hover:to-purple-700 transition-all duration-300 shadow-lg hover:shadow-xl flex items-center gap-2 text-sm sm:text-base"
               variants={buttonVariants}
               whileHover="hover"
               whileTap={{ scale: 0.95 }}
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
-                className="h-5 w-5"
+                className="h-4 w-4 sm:h-5 sm:w-5"
                 viewBox="0 0 20 20"
                 fill="currentColor"
               >
@@ -361,14 +360,14 @@ const Home = () => {
             </motion.a>
             <motion.a
               href="#"
-              className="border-2 border-indigo-600 text-indigo-600 px-8 py-3 rounded-full hover:bg-indigo-50 transition-all duration-300 hover:shadow-md flex items-center gap-2"
+              className="border-2 border-indigo-600 text-indigo-600 px-6 py-2.5 sm:px-8 sm:py-3 rounded-full hover:bg-indigo-50 transition-all duration-300 hover:shadow-md flex items-center gap-2 text-sm sm:text-base"
               variants={buttonVariants}
               whileHover="hover"
               whileTap={{ scale: 0.95 }}
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
-                className="h-5 w-5"
+                className="h-4 w-4 sm:h-5 sm:w-5"
                 viewBox="0 0 20 20"
                 fill="currentColor"
               >
@@ -384,11 +383,12 @@ const Home = () => {
 
           {/* Tech Stack Badges */}
           <motion.div
-            className="mt-12 flex flex-wrap gap-3 justify-center md:justify-start" >
+            className="mt-8 sm:mt-12 flex flex-wrap gap-2 sm:gap-3 justify-center md:justify-start"
+          >
             {['React', 'JavaScript', 'HTML5', 'CSS3'].map((tech, i) => (
               <motion.span
                 key={tech}
-                className={`bg-indigo-100 text-indigo-800 text-xs font-medium px-2.5 py-0.5 rounded-full flex items-center`}
+                className="bg-indigo-100 text-indigo-800 text-xs sm:text-sm font-medium px-2 sm:px-2.5 py-0.5 rounded-full flex items-center"
                 variants={badgeVariants}
                 custom={i}
                 initial="hidden"
@@ -397,12 +397,12 @@ const Home = () => {
                   y: -3,
                   scale: 1.1,
                   backgroundColor: '#e0e7ff',
-                  transition: { type: 'spring', stiffness: 300 }
+                  transition: { type: 'spring', stiffness: 300 },
                 }}
               >
                 <img
-                  src={`/${tech.toLowerCase().replace('5', '').replace('3', '')}.png`}
-                  className="w-4 h-4 mr-1"
+                  src={techBadgeIcons[tech]}
+                  className="w-3 h-3 sm:w-4 sm:h-4 mr-1"
                   alt={tech}
                 />
                 {tech}
@@ -415,10 +415,11 @@ const Home = () => {
         <motion.div
           className="flex-1 flex justify-center relative"
           initial="hidden"
-          animate={controls}>
-          <div className="relative">
+          animate={controls}
+        >
+          <div className="relative w-64 sm:w-80 md:w-96">
             <motion.div
-              className="absolute inset-0 bg-gradient-to-r from-indigo-400 to-purple-400 rounded-full opacity-20 blur-3xl w-80 h-80 md:w-96 md:h-96 transform -translate-x-1/4 translate-y-1/4"
+              className="absolute inset-0 bg-gradient-to-r from-indigo-400 to-purple-400 rounded-full opacity-20 blur-3xl w-full h-full transform -translate-x-1/4 translate-y-1/4"
               variants={{
                 hidden: { scale: 0.5, opacity: 0 },
                 visibleDown: {
@@ -433,22 +434,22 @@ const Home = () => {
                 },
               }}
             />
-            <motion.img
+            {/* Uncomment and update the profile image path if needed */}
+            {/* <motion.img
               src="/my_-removebg-preview.png"
               alt="Kishore Profile"
-              className="w-80 md:w-[28rem] object-cover relative z-10 drop-shadow-xl hover:drop-shadow-2xl transition-all duration-300"
-             
+              className="w-full object-cover relative z-10 drop-shadow-xl hover:drop-shadow-2xl transition-all duration-300"
               whileHover={{ 
                 scale: 1.02,
                 rotate: [0, 2, -2, 0],
-                transition: { duration: 0.8 }
+                transition: { duration: 0.8 },
               }}
-            />
+            /> */}
           </div>
           {techIcons.map((icon, index) => (
             <motion.div
               key={index}
-              className={`absolute ${icon.style} flex flex-col items-center group`}
+              className={`absolute ${icon.style} flex flex-col items-center group hidden md:flex`}
               animate={{
                 x: mousePosition.x * (0.02 * (index + 1)),
                 y: mousePosition.y * (0.02 * (index + 1)),
@@ -458,7 +459,7 @@ const Home = () => {
               <motion.img
                 src={icon.src}
                 alt={icon.name}
-                className="w-12 h-12 transition-all duration-300 group-hover:scale-110"
+                className="w-10 h-10 sm:w-12 sm:h-12 transition-all duration-300 group-hover:scale-110"
                 custom={index}
                 variants={iconVariants}
                 initial="hidden"
@@ -470,7 +471,7 @@ const Home = () => {
                 initial={{ opacity: 0 }}
                 animate={{ 
                   opacity: [0, 1],
-                  transition: { delay: index * 0.2 + 0.5 }
+                  transition: { delay: index * 0.2 + 0.5 },
                 }}
               >
                 {icon.name}

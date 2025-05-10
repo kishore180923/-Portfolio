@@ -1,35 +1,115 @@
 import React, { useState } from 'react';
+import Contact from '../assets/Contact.png';
 
 const Newsletter = () => {
-  const [name, setName] = useState('');
-  const [email, setEmail] = useState('');
-  const [mobile, setMobile] = useState('');
-  const [message, setMessage] = useState('');
-  const [statusMessage, setStatusMessage] = useState('');
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    mobile: '',
+    message: ''
+  });
+  const [status, setStatus] = useState({
+    message: '',
+    type: '' // 'success' or 'error'
+  });
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
-  const handleSubscribe = (e) => {
-    e.preventDefault();
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    
+    // Special handling for mobile field to prevent non-numeric input
+    if (name === 'mobile') {
+      // Only allow numbers and limit to 10 digits
+      const numericValue = value.replace(/\D/g, '').slice(0, 10);
+      setFormData(prev => ({
+        ...prev,
+        [name]: numericValue
+      }));
+    } else {
+      setFormData(prev => ({
+        ...prev,
+        [name]: value
+      }));
+    }
+  };
 
-    // Simple validation
-    if (!name || !email || !mobile || !message) {
-      setStatusMessage('Please fill in all fields.');
-      return;
+  const validateForm = () => {
+    // Name validation
+    if (!formData.name.trim()) {
+      setStatus({ message: 'Please enter your name', type: 'error' });
+      return false;
     }
 
-    // Replace with your subscription logic or API call
+    // Email validation
+    if (!formData.email.trim()) {
+      setStatus({ message: 'Please enter your email', type: 'error' });
+      return false;
+    }
+    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email)) {
+      setStatus({ message: 'Please enter a valid email address', type: 'error' });
+      return false;
+    }
+
+    // Mobile validation
+    if (!formData.mobile.trim()) {
+      setStatus({ message: 'Please enter your mobile number', type: 'error' });
+      return false;
+    }
+    if (!/^\d{10}$/.test(formData.mobile)) {
+      setStatus({ message: 'Please enter a valid 10-digit mobile number', type: 'error' });
+      return false;
+    }
+
+    // Message validation
+    if (!formData.message.trim()) {
+      setStatus({ message: 'Please enter your message', type: 'error' });
+      return false;
+    }
+
+    return true;
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    setStatus({ message: '', type: '' });
+
+    if (!validateForm()) return;
+
+    setIsSubmitting(true);
+
     try {
-      setStatusMessage('Thank you for contacting us!');
-      setName('');
-      setEmail('');
-      setMobile('');
-      setMessage('');
+      // Replace this with your actual API call
+      // const response = await fetch('your-api-endpoint', {
+      //   method: 'POST',
+      //   headers: { 'Content-Type': 'application/json' },
+      //   body: JSON.stringify(formData)
+      // });
+      
+      // Simulate API call delay
+      await new Promise(resolve => setTimeout(resolve, 1000));
+      
+      setStatus({
+        message: 'Thank you for your message! We will get back to you soon.',
+        type: 'success'
+      });
+      setFormData({
+        name: '',
+        email: '',
+        mobile: '',
+        message: ''
+      });
     } catch (error) {
-      setStatusMessage('Submission failed. Please try again later.');
+      setStatus({
+        message: 'Something went wrong. Please try again later.',
+        type: 'error'
+      });
+    } finally {
+      setIsSubmitting(false);
     }
   };
 
   return (
-    <div id ="contact" className="relative overflow-hidden py-10 sm:py-16 bg-white">
+    <div id="contact" className="relative overflow-hidden py-10 sm:py-16 bg-white">
       {/* Floating Symbols Container (absolutely positioned) */}
       <div className="pointer-events-none absolute inset-0">
         {/* Symbol 1 */}
@@ -55,7 +135,7 @@ const Newsletter = () => {
           {/* Left Column (Illustration) */}
           <div className="md:w-1/2 flex justify-center md:justify-start md:pr-8">
             <img
-              src="Emails-bro.png"
+              src={Contact}
               alt="Newsletter Illustration"
               className="w-full max-w-sm h-auto"
             />
@@ -67,7 +147,7 @@ const Newsletter = () => {
               Contact Us! <span role="img" aria-label="contact icon"></span>
             </h2>
             <p className="text-gray-800 text-base sm:text-lg max-w-md">
-              We’d love to hear from you. Drop us a message, and we’ll get back to you as soon as possible. <span role="img" aria-label="sparkles">✨</span>
+              We'd love to hear from you. Drop us a message, and we'll get back to you as soon as possible. <span role="img" aria-label="sparkles">✨</span>
             </p>
 
             {/* Bullet Points */}
@@ -87,44 +167,58 @@ const Newsletter = () => {
             </ul>
 
             {/* Contact Form */}
-            <form onSubmit={handleSubscribe} className="flex flex-col space-y-4 w-full max-w-md">
+            <form onSubmit={handleSubmit} className="flex flex-col space-y-4 w-full max-w-md">
               <input
                 type="text"
+                name="name"
                 className="px-4 py-2 bg-gray-100 text-gray-800 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-orange-500"
                 placeholder="Enter your name"
-                value={name}
-                onChange={(e) => setName(e.target.value)}
+                value={formData.name}
+                onChange={handleChange}
               />
               <input
                 type="email"
+                name="email"
                 className="px-4 py-2 bg-gray-100 text-gray-800 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-orange-500"
                 placeholder="Enter your email"
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
+                value={formData.email}
+                onChange={handleChange}
               />
               <input
-                type="text"
+                type="tel"
+                name="mobile"
                 className="px-4 py-2 bg-gray-100 text-gray-800 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-orange-500"
-                placeholder="Enter your mobile number"
-                value={mobile}
-                onChange={(e) => setMobile(e.target.value)}
+                placeholder="Enter your 10-digit mobile number"
+                value={formData.mobile}
+                onChange={handleChange}
+                pattern="[0-9]{10}"
+                maxLength="10"
               />
               <textarea
+                name="message"
                 className="px-4 py-2 bg-gray-100 text-gray-800 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-orange-500"
                 placeholder="Enter your message"
-                value={message}
-                onChange={(e) => setMessage(e.target.value)}
+                rows="4"
+                value={formData.message}
+                onChange={handleChange}
               />
               <button
                 type="submit"
-                className="px-5 py-2 bg-orange-600 text-white font-medium rounded-md hover:bg-orange-700 focus:outline-none focus:ring-2 focus:ring-orange-500"
+                disabled={isSubmitting}
+                className={`px-5 py-2 bg-orange-600 text-white font-medium rounded-md hover:bg-orange-700 focus:outline-none focus:ring-2 focus:ring-orange-500 ${
+                  isSubmitting ? 'opacity-70 cursor-not-allowed' : ''
+                }`}
               >
-                Send Message
+                {isSubmitting ? 'Sending...' : 'Send Message'}
               </button>
             </form>
 
-            {statusMessage && (
-              <p className="text-sm text-gray-800 mt-2">{statusMessage}</p>
+            {status.message && (
+              <p className={`text-sm mt-2 ${
+                status.type === 'success' ? 'text-green-600' : 'text-red-600'
+              }`}>
+                {status.message}
+              </p>
             )}
           </div>
         </div>
