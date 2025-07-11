@@ -8,10 +8,24 @@ const Footer = () => {
   const [hoveredSocial, setHoveredSocial] = useState(null);
 
   const socialLinks = [
-    { icon: <FaGithub />, name: 'GitHub', color: 'hover:text-gray-700', url: 'https://github.com/kishore180923' },
-    { icon: <FaLinkedin />, name: 'LinkedIn', color: 'hover:text-blue-600', url: 'https://www.linkedin.com/in/kishore-k-4297a0293/' },
-    { icon: <FaTwitter />, name: 'Twitter', color: 'hover:text-sky-400', url: '#' },
-    { icon: <FaEnvelope />, name: 'Email', color: 'hover:text-indigo-500', url: 'mailto:kishorekannan703@gmail.com' }
+    {
+      icon: <FaGithub />,
+      name: 'GitHub',
+      color: 'hover:text-gray-700',
+      url: 'https://github.com/kishore180923',
+    },
+    {
+      icon: <FaLinkedin />,
+      name: 'LinkedIn',
+      color: 'hover:text-blue-600',
+      url: 'https://www.linkedin.com/in/kishore-k-4297a0293/',
+    },
+    {
+      icon: <FaEnvelope />,
+      name: 'Email',
+      color: 'hover:text-indigo-500',
+      url: 'mailto:kishorekannan703@gmail.com', // This opens the mail client
+    },
   ];
 
   return (

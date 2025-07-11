@@ -57,7 +57,8 @@ const ExperienceAndCertifications = () => {
                 <span className="text-sm font-semibold tracking-wider text-indigo-600 uppercase">Professional Experience</span>
               </div>
               <h2 className="text-3xl font-bold mb-1 text-gray-900">Web Developer</h2>
-              <h4 className="text-xl font-semibold mb-6 text-gray-700"> At <span className="text-blue-600">Softye Technologies</span></h4>
+              <h4 className="text-xl font-semibold mb-6 text-gray-700"> 
+                <span className="text-blue-600"></span></h4>
 
               <div className="prose prose-indigo max-w-none text-gray-600 mb-8">
                 <p>

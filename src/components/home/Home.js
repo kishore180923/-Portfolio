@@ -18,15 +18,15 @@ import css3Icon from '../assets/css3.png';
 
 
 const techIcons = [
-{ src: reactIcon, style: 'top-4 left-8', name: 'React' },
-{ src: jsIcon, style: 'top-16 right-10', name: 'JavaScript' },
-{ src: htmlIcon, style: 'bottom-6 left-8', name: 'HTML' },
-{ src: cssIcon, style: 'bottom-20 right-6', name: 'Tailwind CSS' },
-{ src: gitIcon, style: 'top-28 left-1/2', name: 'Git' },
-{ src: nodeJsIcon, style: 'bottom-8 right-1/4', name: 'Node.js' },
-{ src: mongoIcon, style: 'top-6 right-1/3', name: 'MongoDB' },
-{ src: postmanIcon, style: 'bottom-10 left-1/3', name: 'Postman' },
-{ src: css3Icon, style: 'top-1/4 right-12', name: 'CSS3' },
+  { src: reactIcon, style: 'top-4 left-8', name: 'React' },
+  { src: jsIcon, style: 'top-16 right-10', name: 'JavaScript' },
+  { src: htmlIcon, style: 'bottom-6 left-8', name: 'HTML' },
+  { src: cssIcon, style: 'bottom-20 right-6', name: 'Tailwind CSS' },
+  { src: gitIcon, style: 'top-28 left-1/2', name: 'Git' },
+  { src: nodeJsIcon, style: 'bottom-8 right-1/4', name: 'Node.js' },
+  { src: mongoIcon, style: 'top-6 right-1/3', name: 'MongoDB' },
+  { src: postmanIcon, style: 'bottom-10 left-1/3', name: 'Postman' },
+  { src: css3Icon, style: 'top-1/4 right-12', name: 'CSS3' },
 ];
 
 // Map tech names to their corresponding icons for badges
@@ -202,7 +202,7 @@ const Home = () => {
       onMouseMove={handleMouseMove}
     >
       {/* Particle.js Background */}
-      <motion.div 
+      <motion.div
         className="absolute inset-0 z-0"
         style={{
           y: yBg,
@@ -313,7 +313,7 @@ const Home = () => {
             variants={itemVariants}
           >
             A{' passionate '}
-            <motion.span 
+            <motion.span
               className="bg-gradient-to-r from-indigo-600 to-purple-600 bg-clip-text text-transparent"
               animate={{
                 backgroundPosition: ['0%', '100%', '0%'],
@@ -359,7 +359,10 @@ const Home = () => {
               Let's Talk
             </motion.a>
             <motion.a
-              href="#"
+              href="/Kishore-CV.pdf"
+              download="Kishore-K-Resume.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
               className="border-2 border-indigo-600 text-indigo-600 px-6 py-2.5 sm:px-8 sm:py-3 rounded-full hover:bg-indigo-50 transition-all duration-300 hover:shadow-md flex items-center gap-2 text-sm sm:text-base"
               variants={buttonVariants}
               whileHover="hover"
@@ -379,6 +382,7 @@ const Home = () => {
               </svg>
               Download CV
             </motion.a>
+
           </motion.div>
 
           {/* Tech Stack Badges */}
@@ -466,10 +470,10 @@ const Home = () => {
                 animate={controls}
                 whileHover="hover"
               />
-              <motion.span 
+              <motion.span
                 className="mt-1 text-xs text-gray-700"
                 initial={{ opacity: 0 }}
-                animate={{ 
+                animate={{
                   opacity: [0, 1],
                   transition: { delay: index * 0.2 + 0.5 },
                 }}
