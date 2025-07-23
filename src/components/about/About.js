@@ -15,7 +15,10 @@ const About = () => {
         </div>
 
         <div>
-          <h3 className="text-blue-600 font-semibold text-sm uppercase tracking-wider animate-fade-in">About Me</h3>
+          <h3 className="text-blue-600 font-bold text-xl uppercase tracking-widest font-serif animate-fade-in">
+  About Me
+</h3>
+
           <h2 className="text-3xl md:text-4xl font-bold text-gray-800 mt-2 animate-fade-in" style={{ animationDelay: '0.2s' }}>
             Aspiring Web Developer on a Creative Journey
           </h2>

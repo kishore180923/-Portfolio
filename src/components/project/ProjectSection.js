@@ -11,17 +11,17 @@ const projects = [
     description: "A full-stack e-commerce solution with cart functionality, user authentication, and payment processing.",
     tech: ["React", "Node.js", "MongoDB", "Stripe"],
     image: Ecommerce,
-    github: "https://github.com/yourusername/ecommerce-platform",
-    live: "https://yourapp.com"
+    github: "https://github.com/kishore180923",
+    live: "https://kishore180923.github.io"
   },
   {
     id: 2,
-    title: "movie ticket booking",
+    title: "Movie Ticket Booking",
     description: "A movie ticket booking application with a user-friendly interface and real-time seat selection.",
     tech: ["React", "Firebase", "Tailwind CSS", "DnD"],
     image: ticktbooking,
-    github: "https://github.com/yourusername/task-manager",
-    live: "https://tasks.yourapp.com"
+    github: "https://github.com/kishore180923",
+    live: "https://kishore180923.github.io"
   },
   {
     id: 3,
@@ -29,8 +29,8 @@ const projects = [
     description: "Real-time weather forecasting application with interactive maps and location-based services.",
     tech: ["React", "OpenWeather API", "Chart.js", "Geolocation"],
     image: weather,
-    github: "https://github.com/yourusername/weather-dashboard",
-    live: "https://weather.yourapp.com"
+    github: "https://github.com/kishore180923",
+    live: "https://kishore180923.github.io"
   }
 ];
 
@@ -56,19 +56,16 @@ const ProjectSection = () => {
               key={project.id}
               className="group relative overflow-hidden rounded-xl bg-white border border-gray-200 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-2"
             >
-              {/* Project image with always-visible description */}
               <div className="relative h-56 overflow-hidden">
                 <img
+                  loading="lazy"
                   src={project.image}
-                  alt={project.title}
+                  alt={`Preview of ${project.title} project`}
                   className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-gray-900/70 via-gray-900/30 to-transparent p-6 flex items-end">
-                  <div>
-                    <p className="text-white text-sm leading-relaxed">{project.description}</p>
-                  </div>
+                  <p className="text-white text-sm leading-relaxed">{project.description}</p>
                 </div>
-                {/* Live demo badge */}
                 <a
                   href={project.live}
                   target="_blank"
@@ -79,13 +76,11 @@ const ProjectSection = () => {
                 </a>
               </div>
 
-              {/* Project content */}
               <div className="p-6">
                 <h3 className="text-xl font-bold text-gray-900 mb-2 group-hover:text-blue-600 transition-colors">
                   {project.title}
                 </h3>
-                
-                {/* Tech stack badges */}
+
                 <div className="flex flex-wrap gap-2 mb-4">
                   {project.tech.map((tech, index) => (
                     <span
@@ -97,7 +92,6 @@ const ProjectSection = () => {
                   ))}
                 </div>
 
-                {/* Action buttons */}
                 <div className="flex space-x-3">
                   <a
                     href={project.github}
@@ -123,10 +117,11 @@ const ProjectSection = () => {
           ))}
         </div>
 
-        {/* View more button */}
         <div className="text-center mt-16">
           <a
-            href="#"
+            href="https://github.com/kishore180923"
+            target="_blank"
+            rel="noopener noreferrer"
             className="inline-flex items-center px-6 py-3 border border-gray-300 text-base font-medium rounded-full text-gray-700 bg-white hover:bg-gray-50 hover:shadow-sm transition-all duration-300 hover:border-gray-400"
           >
             View All Projects

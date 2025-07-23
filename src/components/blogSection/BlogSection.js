@@ -12,7 +12,7 @@ const BlogSection = () => {
       title: "Building Modern Web Apps with React 18",
       excerpt: "Explore the new features in React 18 and how they can improve your development workflow.",
       category: "Web Development",
-      date: "May 15, 2023",
+      date: "May 15, 2025",
       readTime: "5 min read",
       image: "https://images.unsplash.com/photo-1633356122544-f134324a6cee?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
     },
@@ -21,7 +21,7 @@ const BlogSection = () => {
       title: "Tailwind CSS vs. Traditional CSS: A Comparison",
       excerpt: "We compare the utility-first approach of Tailwind with traditional CSS methodologies.",
       category: "CSS",
-      date: "April 28, 2023",
+      date: "April 28, 2025",
       readTime: "7 min read",
       image: "https://images.unsplash.com/photo-1621839673705-6617adf9e890?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
     },
@@ -30,7 +30,7 @@ const BlogSection = () => {
       title: "The Future of Frontend Development in 2023",
       excerpt: "Predictions and trends that will shape frontend development in the coming year.",
       category: "Industry Trends",
-      date: "April 10, 2023",
+      date: "April 10, 2025",
       readTime: "8 min read",
       image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
     },

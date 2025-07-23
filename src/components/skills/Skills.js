@@ -62,7 +62,7 @@ const SkillSection = () => {
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.5, delay: 0.1 }}
           >
-            As a <span className="text-blue-600 font-medium">passionate fresher</span> with <span className="text-purple-600 font-medium">7 months</span> of hands-on experience, I’ve been building <span className="text-pink-600 font-medium">efficient</span> and <span className="text-purple-600 font-medium">user-friendly</span> web applications. I'm constantly learning and evolving to grow as a modern web developer.
+            As a <span className="text-blue-600 font-medium">passionate fresher</span> with <span className="text-purple-600 font-medium"> 1 Year </span> of hands-on experience, I’ve been building <span className="text-pink-600 font-medium">efficient</span> and <span className="text-purple-600 font-medium">user-friendly</span> web applications. I'm constantly learning and evolving to grow as a modern web developer.
           </motion.p>
 
 

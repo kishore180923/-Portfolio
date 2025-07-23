@@ -41,14 +41,6 @@ const ExperienceAndCertifications = () => {
               />
 
               <div className="absolute inset-0 flex items-end p-6">
-                <a
-                  href="https://softyetech.com/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-blue-600 font-medium hover:underline"
-                >
-                  Visit Company Website →
-                </a>
               </div>
             </div>
             <div className="w-full lg:w-1/2 p-8 lg:p-10">

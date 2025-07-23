@@ -209,82 +209,7 @@ const Home = () => {
           x: xBg,
         }}
       >
-        <Particles
-          id="tsparticles"
-          init={particlesInit}
-          options={{
-            fullScreen: { enable: false },
-            background: {
-              color: {
-                value: 'transparent',
-              },
-            },
-            fpsLimit: 60,
-            interactivity: {
-              events: {
-                onClick: {
-                  enable: true,
-                  mode: 'push',
-                },
-                onHover: {
-                  enable: true,
-                  mode: 'repulse',
-                },
-              },
-              modes: {
-                push: {
-                  quantity: 4,
-                },
-                repulse: {
-                  distance: 100,
-                  duration: 0.4,
-                },
-              },
-            },
-            particles: {
-              color: {
-                value: '#6366f1',
-              },
-              links: {
-                color: '#818cf8',
-                distance: 150,
-                enable: true,
-                opacity: 0.3,
-                width: 1,
-              },
-              collisions: {
-                enable: true,
-              },
-              move: {
-                direction: 'none',
-                enable: true,
-                outModes: {
-                  default: 'bounce',
-                },
-                random: false,
-                speed: 1,
-                straight: false,
-              },
-              number: {
-                density: {
-                  enable: true,
-                  area: 800,
-                },
-                value: 60,
-              },
-              opacity: {
-                value: 0.3,
-              },
-              shape: {
-                type: 'circle',
-              },
-              size: {
-                value: { min: 1, max: 3 },
-              },
-            },
-            detectRetina: true,
-          }}
-        />
+        
       </motion.div>
 
       <div className="max-w-7xl w-full flex flex-col md:flex-row items-center gap-8 sm:gap-12 md:gap-16 z-10" ref={ref}>
@@ -359,29 +284,30 @@ const Home = () => {
               Let's Talk
             </motion.a>
             <motion.a
-              href="/Kishore-CV.pdf"
-              download="Kishore-K-Resume.pdf"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="border-2 border-indigo-600 text-indigo-600 px-6 py-2.5 sm:px-8 sm:py-3 rounded-full hover:bg-indigo-50 transition-all duration-300 hover:shadow-md flex items-center gap-2 text-sm sm:text-base"
-              variants={buttonVariants}
-              whileHover="hover"
-              whileTap={{ scale: 0.95 }}
-            >
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                className="h-4 w-4 sm:h-5 sm:w-5"
-                viewBox="0 0 20 20"
-                fill="currentColor"
-              >
-                <path
-                  fillRule="evenodd"
-                  d="M3 17a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm3.293-7.707a1 1 0 011.414 0L9 10.586V3a1 1 0 112 0v7.586l1.293-1.293a1 1 0 111.414 1.414l-3 3a1 1 0 01-1.414 0l-3-3a1 1 0 010-1.414z"
-                  clipRule="evenodd"
-                />
-              </svg>
-              Download CV
-            </motion.a>
+  href="/Kishore-CV.pdf" // ✅ Make sure this file exists in the `public` folder
+  download="Kishore-K-Resume.pdf"
+  target="_blank"
+  rel="noopener noreferrer"
+  className="border-2 border-indigo-600 text-indigo-600 px-6 py-2.5 sm:px-8 sm:py-3 rounded-full hover:bg-indigo-50 transition-all duration-300 hover:shadow-md flex items-center gap-2 text-sm sm:text-base"
+  variants={buttonVariants}
+  whileHover="hover"
+  whileTap={{ scale: 0.95 }}
+>
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    className="h-4 w-4 sm:h-5 sm:w-5"
+    viewBox="0 0 20 20"
+    fill="currentColor"
+  >
+    <path
+      fillRule="evenodd"
+      d="M3 17a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm3.293-7.707a1 1 0 011.414 0L9 10.586V3a1 1 0 112 0v7.586l1.293-1.293a1 1 0 111.414 1.414l-3 3a1 1 0 01-1.414 0l-3-3a1 1 0 010-1.414z"
+      clipRule="evenodd"
+    />
+  </svg>
+  Download CV
+</motion.a>
+
 
           </motion.div>
 
@@ -438,17 +364,8 @@ const Home = () => {
                 },
               }}
             />
-            {/* Uncomment and update the profile image path if needed */}
-            {/* <motion.img
-              src="/my_-removebg-preview.png"
-              alt="Kishore Profile"
-              className="w-full object-cover relative z-10 drop-shadow-xl hover:drop-shadow-2xl transition-all duration-300"
-              whileHover={{ 
-                scale: 1.02,
-                rotate: [0, 2, -2, 0],
-                transition: { duration: 0.8 },
-              }}
-            /> */}
+           
+            
           </div>
           {techIcons.map((icon, index) => (
             <motion.div
